@@ -1,0 +1,22 @@
+<html>
+<title>Title</title>
+<script>
+    function addIframe() {
+        var ifrm = document.createElement("iframe");
+        ifrm.setAttribute("src", "./child-iframe.html");
+        ifrm.setAttribute("id", "iframe-id");
+        ifrm.style.width = "640px";
+        ifrm.style.height = "480px";
+        document.getElementById("iframe-hook").append(ifrm);
+    }
+
+    function removeIframe() {
+        document.getElementById("iframe-hook").removeChild(document.getElementById("iframe-id"));
+    }
+</script>
+<body>
+<div id="iframe-hook"></div>
+<button onclick="addIframe()" id="add-btn">Add Iframe</button>
+<button onclick="removeIframe()" id="remove-btn">Remove Iframe</button>
+</body>
+</html>
